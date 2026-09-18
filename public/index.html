@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student JARVIS V3</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <header class="topbar">
+    <div><div class="brand">JARVIS <span>/ STUDENT OS</span></div><div class="status"><i></i> V3 • LIVE API</div></div>
+    <button id="exportBtn" class="smallBtn">Export Backup</button>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <div><p class="eyebrow">COMMAND CENTER</p><h1 id="welcome">Welcome, Student.</h1><p>AI assistance, tasks, study, grades, expenses and notes — in one place.</p></div>
+      <div class="reactor">J</div>
+    </section>
+    <nav class="tabs">
+      <button class="tab active" data-tab="dashboard">Dashboard</button><button class="tab" data-tab="ai">AI Assistant</button><button class="tab" data-tab="tasks">Tasks</button><button class="tab" data-tab="study">Study</button><button class="tab" data-tab="cgpa">CGPA</button><button class="tab" data-tab="expenses">Expenses</button><button class="tab" data-tab="notes">Notes</button><button class="tab" data-tab="profile">Profile</button>
+    </nav>
+
+    <section id="dashboard" class="panel activePanel">
+      <div class="stats"><div><span>Open tasks</span><b id="sTasks">0</b></div><div><span>Study time</span><b id="sStudy">0m</b></div><div><span>CGPA</span><b id="sCgpa">0.00</b></div><div><span>Expenses</span><b id="sExpense">₹0</b></div></div>
+      <div class="grid2"><div class="card"><h2>Today's focus</h2><p id="focusText">Add a task and start a study session.</p></div><div class="card"><h2>JARVIS status</h2><p>● Local data ready<br/>● Secure server-side AI route<br/>● No camera / microphone</p></div></div>
+    </section>
+
+    <section id="ai" class="panel">
+      <div class="card aiCard"><div class="sectionHead"><div><h2>JARVIS AI</h2><p>Ask about study, coding, planning, college or general questions.</p></div><span class="live">LIVE API</span></div>
+        <div id="chat" class="chat"><div class="msg bot"><b>JARVIS</b><div>Online. Ask me anything.</div></div></div>
+        <form id="chatForm" class="chatForm"><input id="chatInput" autocomplete="off" placeholder="Type your command…"/><button>Send</button></form>
+        <small class="hint">Your API key stays on the server. Never paste it into this page.</small>
+      </div>
+    </section>
+
+    <section id="tasks" class="panel"><div class="card"><h2>Tasks</h2><form id="taskForm" class="row"><input id="taskInput" placeholder="Add a task…" required/><select id="priority"><option>High</option><option selected>Medium</option><option>Low</option></select><button>Add</button></form><div id="taskList" class="list"></div></div></section>
+
+    <section id="study" class="panel"><div class="card center"><h2>Pomodoro</h2><div id="timer" class="timer">25:00</div><div class="row centerRow"><button id="startTimer">Start</button><button id="pauseTimer">Pause</button><button id="resetTimer">Reset</button></div><p>Completed focus time: <b id="studyTotal">0m</b></p></div></section>
+
+    <section id="cgpa" class="panel"><div class="card"><h2>CGPA Calculator</h2><p class="muted">Enter subject grade points and credits.</p><form id="cgpaForm" class="subjectForm"><div id="subjects"></div><button type="button" id="addSubject">+ Add subject</button><button type="submit">Calculate CGPA</button></form><h3>CGPA: <span id="cgpaResult">0.00</span></h3></div></section>
+
+    <section id="expenses" class="panel"><div class="card"><h2>Expenses</h2><form id="expenseForm" class="row"><input id="expenseName" placeholder="Expense" required/><input id="expenseAmount" type="number" min="0" placeholder="₹ Amount" required/><button>Add</button></form><div id="expenseList" class="list"></div></div></section>
+
+    <section id="notes" class="panel"><div class="card"><h2>Quick Notes</h2><textarea id="notesBox" rows="12" placeholder="Write your notes…"></textarea><button id="saveNotes">Save Notes</button></div></section>
+
+    <section id="profile" class="panel"><div class="card"><h2>Student Profile</h2><form id="profileForm" class="profileForm"><input id="pName" placeholder="Name"/><input id="pCollege" placeholder="College"/><input id="pGoal" placeholder="Current goal"/><button>Save Profile</button></form></div></section>
+  </main>
+  <footer>Student JARVIS V3 • Local data + secure AI backend • No camera / microphone</footer>
+  <script src="app.js"></script>
+</body>
+</html>
