@@ -1,0 +1,6 @@
+{
+  "name": "student-jarvis-v3",
+  "private": true,
+  "type": "module",
+  "dependencies": { "openai": "latest" }
+}
